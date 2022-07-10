@@ -9,6 +9,11 @@
     --alternative:#003049;
     --text-color:#14213d;
     --text-color-light:#ede6f2;
+
+    /*Fondos*/
+    --fondo-slide: linear-gradient(to bottom, #FFFFFF 50%, #a9d6fa);
+    --fondo-tarjetas: linear-gradient(to bottom, #a9d6fa, #83dcff);
+    --fondo-galeria: linear-gradient(to bottom, #83dcff, #ffffff);
      
     /*Espaciado*/
     --spacing-large: 6rem;
@@ -76,6 +81,10 @@ header{
     padding: var(--spacing-xsmall);
     border: 2px solid white;
     border-radius: 15px;
+    transition: all .5s ease-in-out; 
+}
+.menu__link:hover{
+    border-color: var(--text-base); 
 }
 
 /* Estilos Main */
@@ -89,7 +98,8 @@ header{
 .slide{
     display: flex;
     padding: var(--spacing-large);
-    align-items: center;   
+    align-items: center; 
+    background: var(--fondo-slide);  
 }
 
 .slide__img{
@@ -144,7 +154,8 @@ header{
     display: flex;
     gap: var(--spacing-xsmall);
     justify-content: center;
-    flex-wrap: wrap;        
+    flex-wrap: wrap;
+    background: var(--fondo-tarjetas);         
 }
 
 .box{
@@ -171,12 +182,30 @@ header{
     color: var(--text-color);
     font-size:var(--text-base);
 }
+
+.box__img{
+    opacity: 0.5;
+    transition: all 1s ease-in-out;
+}
+
+.box__img:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
 /*Estilos Galeria de Index*/
 .galeria{
     display: grid;
     grid-template-columns: repeat(6,auto);
     grid-template-rows: repeat(2,auto);
-    gap:var(--spacing-small);   
+    gap:var(--spacing-small);
+    background:var(--fondo-galeria);   
+}
+.galeria__img2{
+    transition: all 0.5s ease-in-out;
+}
+.galeria__img2:hover{
+    cursor:pointer;
+    box-shadow: 0px 0px 20px black;  
 }
 
 .galeria__img:nth-of-type(1){
@@ -212,7 +241,8 @@ header{
     display: flex;
     gap: var(--spacing-xsmall);
     justify-content: center;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
+    background: var(--fondo-slide);   
 }
 
 .box__servicios{
@@ -240,6 +270,15 @@ header{
     font-size: var(--text-base);
     color: var(--text-color);
 }
+.box__img__servicios{
+    opacity: 0.5;
+    transition: all 1s ease-in-out;
+}
+
+.box__img__servicios:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
 
 /* Estilos Galeria */
 
@@ -259,6 +298,12 @@ header{
 
 .seccion__galeria__imagen{
     flex: 1 1 50%;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+}
+.seccion__galeria__imagen:hover{
+    opacity: 1;
+    cursor:pointer;         
 }
 
 .seccion__galeria__imagen:nth-of-type(1){
